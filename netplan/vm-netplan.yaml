@@ -1,0 +1,9 @@
+network:
+  ethernets:
+    ens33:
+      dhcp4: yes
+      gateway4: 10.0.0.1
+      nameservers:
+        addresses:
+        - 10.0.0.10
+  version: 2

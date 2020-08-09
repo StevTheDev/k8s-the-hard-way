@@ -1,0 +1,12 @@
+network:
+  wifis:
+    wlp4s0:
+      access-points:
+        ssid: 
+          password: "changeme"
+      dhcp4: yes
+      gateway4: 10.0.0.1
+      nameservers:
+        addresses:
+        - 10.0.0.10
+  version: 2

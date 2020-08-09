@@ -1,0 +1,19 @@
+;
+; BIND reverse data file for broadcast zone
+;
+$TTL	604800
+@	IN	SOA	pop-os.lab.net. steven.lab.net. (
+			    100		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	pop-os.lab.net.
+
+10 IN PTR pop-os.lab.net.
+61 IN PTR master-1.lab.net.
+62 IN PTR master-2.lab.net.
+71 IN PTR worker-1.lab.net.
+72 IN PTR worker-2.lab.net.
+

@@ -1,0 +1,21 @@
+//
+// Do any local configuration here
+//
+
+// forward lookup zone (name -> IP)
+zone "lab.net" {
+    type master;
+    file "/etc/bind/db.lab";
+    allow-update { none; };
+};
+
+// reverse lookup zone (IP -> name)
+zone "0.0.10.in-addr.arpa" {
+    type master;
+    file "db.10";
+    allow-update { none; };
+};
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+// include "/etc/bind/zones.rfc1918";
