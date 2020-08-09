@@ -1,0 +1,22 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	pop-os.lab.net. steven.lab.net. (
+			    100		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	pop-os.lab.net.
+
+pop-os IN A 10.0.0.10
+master-1 IN A 10.0.0.61
+master-2 IN A 10.0.0.62
+worker-1 IN A 10.0.0.71
+worker-2 IN A 10.0.0.72
+
+dns IN CNAME pop-os.lab.net.
+
+@	IN	AAAA	::1
