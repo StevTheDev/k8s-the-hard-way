@@ -1,3 +1,7 @@
+pki/*.pem
+pki/*.csr
+
+# Ignore subdirectories of vms/
 !vms
 vms/*
 !vms/*.*

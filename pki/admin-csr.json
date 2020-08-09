@@ -1,0 +1,16 @@
+{
+  "CN": "admin",
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  },
+  "names": [
+    {
+      "O": "system:admins",
+      "OU": "Kubernetes: The Hard Way",
+      "L": "St Louis",
+      "ST": "Missouri",
+      "C": "US"
+    }
+  ]
+}
