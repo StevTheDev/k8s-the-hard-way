@@ -1,6 +1,9 @@
-!vms
-vms/*
-!vms/*.*
+kubeconfigs/*.kubeconfig
 
 pki/*.pem
 pki/*.csr
+
+# gitignore subdirectories of vms/
+!vms
+vms/*
+!vms/*.*
