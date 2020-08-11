@@ -10,11 +10,11 @@ for i in $(seq 1 $num_workers); do
   ssh -F ./vms/ssh.config ${hostname} "mkdir -p ~/kubeconfigs"
 
   scp -F ./vms/ssh.config \
-    ./kubeconfigs/${hostname}.kubeconfig \
-    ./kubeconfigs/kube-proxy.kubeconfig \
+    ./kubeconfigs/${hostname}.yaml \
+    ./kubeconfigs/kube-proxy.yaml \
     ${hostname}:~/kubeconfigs
   
-  ssh -F ./vms/ssh.config ${hostname} "chmod -R 640 ~/kubeconfigs/*.kubeconfig"
+  ssh -F ./vms/ssh.config ${hostname} "chmod -R 640 ~/kubeconfigs/*.yaml"
   ssh -F ./vms/ssh.config ${hostname} "ls -la ~/kubeconfigs/"
 done
 
@@ -26,11 +26,11 @@ for i in $(seq 1 $num_masters); do
   ssh -F ./vms/ssh.config ${hostname} "mkdir -p ~/kubeconfigs"
   
   scp -F ./vms/ssh.config \
-    ./kubeconfigs/admin.kubeconfig \
-    ./kubeconfigs/kube-controller-manager.kubeconfig \
-    ./kubeconfigs/kube-scheduler.kubeconfig \
+    ./kubeconfigs/admin.yaml \
+    ./kubeconfigs/kube-controller-manager.yaml \
+    ./kubeconfigs/kube-scheduler.yaml \
     ${hostname}:~/kubeconfigs
     
-  ssh -F ./vms/ssh.config ${hostname} "chmod -R 640 ~/kubeconfigs/*.kubeconfig"
+  ssh -F ./vms/ssh.config ${hostname} "chmod -R 640 ~/kubeconfigs/*.yaml"
   ssh -F ./vms/ssh.config ${hostname} "ls -la ~/kubeconfigs/"
 done
