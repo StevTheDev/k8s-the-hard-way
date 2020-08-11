@@ -9,4 +9,8 @@ This repo contains configuration files and utility script for completing
 
 `vms` contains virtual machine files.
 
-`scripts`
+`scripts` for:
+
+- Installing cfssl and kubectl ("client tools")
+- Generating a CA and Cluster Certificates
+- Generating Kubeconfigs
