@@ -36,7 +36,7 @@ class Manager(object):
             return [resolve_path(i.name) for i in self.directory.iterdir() if i.is_dir()]
         else:
             return [resolve_path(vm)]
-        
+
     def _call_vmrun(self, action, vm="", gui=""):
         command = f"vmrun {action} {vm} {gui}".split(" ")
         subprocess.run(command)
@@ -47,7 +47,7 @@ class Manager(object):
 
     def start(self, vm="all"):
         """Start a VM or directory of VMs"""
-        
+
         gui = "nogui" if not self.gui else ""
         for machine in self._find_vms(vm):
             if machine:
@@ -59,12 +59,8 @@ class Manager(object):
         for machine in self._find_vms(vm):
             if machine:
                 print(f"stopping {machine}")
-                self._call_vmrun("stop", machine)       
+                self._call_vmrun("stop", machine)
 
 
 if __name__ == '__main__':
     fire.Fire(Manager)
-
-
-
-
