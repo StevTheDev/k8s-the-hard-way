@@ -13,3 +13,6 @@ ls -la ./pki
 
 # Distribute certificate files to VMs
 ./scripts/pki/distribute_certificates.sh
+
+# Generate and Distribute the Data Encryption key
+./scripts/pki/data_encryption_key.sh

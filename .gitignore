@@ -1,7 +1,8 @@
-kubeconfigs/*.kubeconfig
+kubeconfigs/*.yaml
 
 pki/*.pem
 pki/*.csr
+pki/data_encryption_config.yaml
 
 # Ignore subdirectories of vms/
 !vms
