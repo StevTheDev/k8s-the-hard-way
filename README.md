@@ -3,14 +3,13 @@
 This repo contains configuration files and utility script for completing
 [Kubernetes: the Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way)
 
-`dns` contains bind9 configuration files for hosts on the 10.0.0.0/24 subnet.
+`vms` contains files for configuring the lab environment.
 
-`netplan` contains netplan configuration files for the host and lab machines.
-
-`vms` contains virtual machine files.
-
-`scripts` for:
+`scripts` contains scripts for:
 
 - Installing cfssl and kubectl ("client tools")
 - Generating a CA and Cluster Certificates
 - Generating Kubeconfigs
+- Installing etcd on the Controller nodes
+
+The other directories are used to organize the various generated config files. Most of their contents are in the .gitignore

@@ -10,3 +10,5 @@ pki/data_encryption_config.yaml
 !vms
 vms/*
 !vms/*.*
+!vms/dns
+!vms/netplan
