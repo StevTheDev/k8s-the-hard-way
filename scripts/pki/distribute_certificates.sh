@@ -14,7 +14,8 @@ for i in $(seq 1 $num_workers); do
     steven@${hostname}:~/pki
   
   ssh -F ./vms/ssh.config ${hostname} "chmod -R 640 ~/pki/*.pem"
-  ssh -F ./vms/ssh.config ${hostname} "ls -la ~/pki/"
+  ssh -F ./vms/ssh.config ${hostname} "sudo mv ~/pki/* /etc/etcd"
+  ssh -F ./vms/ssh.config ${hostname} "ls -la /etc/etcd"
 
 done
 
@@ -30,6 +31,7 @@ for i in $(seq 1 $num_masters); do
     steven@${hostname}:~/pki
     
   ssh -F ./vms/ssh.config ${hostname} "chmod -R 640 ~/pki/*.pem"
-  ssh -F ./vms/ssh.config ${hostname} "ls -la ~/pki/"
+  ssh -F ./vms/ssh.config ${hostname} "sudo mv ~/pki/* /etc/etcd"
+  ssh -F ./vms/ssh.config ${hostname} "ls -la /etc/etcd"
 done
 

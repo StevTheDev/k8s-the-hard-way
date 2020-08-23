@@ -2,6 +2,8 @@
 
 set -e
 
+ENCRYPTION_KEY=$(head -c 32 /dev/urandom | base64)
+
 cat > ./pki/data_encryption_config.yaml << EOF
 kind: EncryptionConfig
 apiVersion: v1
@@ -29,6 +31,8 @@ for i in $(seq 1 $num_masters); do
     ./pki/data_encryption_config.yaml \
     ${hostname}:~/pki
     
-  ssh -F ./vms/ssh.config ${hostname} "chmod -R 640 ~/pki/*.pem"
-  ssh -F ./vms/ssh.config ${hostname} "ls -la ~/pki/"
+  ssh -F ./vms/ssh.config ${hostname} "chmod -R 640 ~/pki/data_encryption_config.yaml"
+  ssh -F ./vms/ssh.config ${hostname} "sudo mv ~/pki/data_encryption_config.yaml /etc/etcd"
+
+  ssh -F ./vms/ssh.config ${hostname} "ls -la /etc/etcd"
 done
