@@ -1,13 +1,13 @@
+control-plane/*
+!control-plane/*.md
+
 etcd/*.service
 
 kubeconfigs/*.yaml
 
-pki/*.pem
-pki/*.csr
-pki/data_encryption_config.yaml
+pki/*
+!pki/*.md
 
-# Ignore subdirectories of vms/
-!vms
 vms/*
 !vms/*.*
 !vms/dns
