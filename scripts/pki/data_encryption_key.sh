@@ -32,7 +32,5 @@ for i in $(seq 1 $num_masters); do
     ${hostname}:~/pki
     
   ssh -F ./vms/ssh.config ${hostname} "chmod -R 640 ~/pki/data_encryption_config.yaml"
-  ssh -F ./vms/ssh.config ${hostname} "sudo mv ~/pki/data_encryption_config.yaml /etc/etcd"
-
-  ssh -F ./vms/ssh.config ${hostname} "ls -la /etc/etcd"
+  ssh -F ./vms/ssh.config ${hostname} "ls -la ~/pki"
 done
