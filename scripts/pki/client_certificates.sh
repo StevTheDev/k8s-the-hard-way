@@ -25,7 +25,7 @@ cat > admin-csr.json << EOF
   },
   "names": [
     {
-      "O": "system:admins",
+      "O": "system:masters",
       "OU": "Kubernetes: The Hard Way",
       "L": "St Louis",
       "ST": "Missouri",
