@@ -6,7 +6,7 @@ from pathlib import Path
 import fire
 
 class Manager(object):
-    """Use vmrun to start, stop and list unning VMs
+    """Use vmrun to start, stop and list running VMs
     
     Options:
       --base-dir (string) The base directory for VMs (default=~/k8s-the-hard-way/vms)
